@@ -16,6 +16,6 @@ If you change anything on the file how to commit\
 \
 1. write  \'93git status\'94 and check the change \
 2. \'93git add . \'93 \
-3. \'93git comit -m \'93write the memo for description\'94\
+3. \'93git commit -m \'93write the memo for description\'94\
 4.\'94git push\'94 to change on git
 
