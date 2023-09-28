@@ -1,102 +1,124 @@
-import pandas as pd
 import tkinter as tk
-from tkinter import ttk, messagebox, filedialog
+from tkinter import ttk, messagebox
 from datetime import datetime
-from PIL import Image, ImageTk
+import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
-def load_data():
-    file_path = filedialog.askopenfilename(title="Crash Statistics Victoria", filetypes=[("CSV files", "*.csv")])
-    if not file_path:
-        return
-    
-    global data
-    data = pd.read_csv(file_path, parse_dates=['ACCIDENT_DATE'], dayfirst=True)
-    accident_types = data['ACCIDENT_TYPE'].unique()
+# Load the data
+file_path = 'Crash Statistics Victoria.csv'
+data = pd.read_csv(file_path, parse_dates=['ACCIDENT_DATE'], dayfirst=True)
+min_date = data['ACCIDENT_DATE'].min().strftime('%Y-%m-%d')
+max_date = data['ACCIDENT_DATE'].max().strftime('%Y-%m-%d')
 
-    # Populate the accident type comboboxes with unique accident types
-    for combobox in accident_type_comboboxes:
-        combobox["values"] = accident_types
-        combobox.set("Select accident type")
+# Create the main window
+root = tk.Tk()
+root.title("Accident Analysis")
 
-def plot_accidents_by_date_and_type(start_date, end_date, selected_types):
-    filtered_data = data[(data['ACCIDENT_DATE'] >= start_date) & (data['ACCIDENT_DATE'] <= end_date) & (data['ACCIDENT_TYPE'].isin(selected_types))]
-    accidents_by_date = filtered_data.groupby('ACCIDENT_DATE').size().reset_index(name='Number_of_Accidents')
-    
-    fig, ax = plt.subplots(figsize=(10, 4))
-    ax.plot(accidents_by_date['ACCIDENT_DATE'], accidents_by_date['Number_of_Accidents'], marker='o')
-    ax.set(title='Number of Accidents by Date', xlabel='Date', ylabel='Number of Accidents')
-    ax.grid(True)
-    
-    canvas = FigureCanvasTkAgg(fig, master=second_frame)
-    canvas_widget = canvas.get_tk_widget()
-    canvas_widget.grid(row=0, column=0, padx=10, pady=10)
-    canvas.draw()
+# Create the frames
+first_frame = tk.Frame(root)
+first_frame.pack(fill='x')
+
+second_frame = tk.Frame(root)
+second_frame.pack(fill='both', expand=True)
+
+# Define the first frame components
+start_date_label = tk.Label(first_frame, text="Start Date:")
+start_date_label.grid(row=0, column=0, padx=10, pady=10, sticky='w')
+
+start_date_entry = tk.Entry(first_frame)
+start_date_entry.grid(row=0, column=1, padx=10, pady=10, sticky='w')
+start_date_entry.insert(0, min_date)
+
+end_date_label = tk.Label(first_frame, text="End Date:")
+end_date_label.grid(row=0, column=2, padx=10, pady=10, sticky='w')
+
+end_date_entry = tk.Entry(first_frame)
+end_date_entry.grid(row=0, column=3, padx=10, pady=10, sticky='w')
+end_date_entry.insert(0, max_date)
+
+# Add a label to display the selectable date range
+date_range_label = tk.Label(
+    first_frame, text=f"Selectable Date Range: {min_date} to {max_date}", font=('Arial', 9), fg='grey')
+date_range_label.grid(row=1, column=0, columnspan=4, pady=(0, 10))
+
+# Alcohol Related Label and Combobox
+alcohol_related_label = tk.Label(first_frame, text="Alcohol Related:")
+alcohol_related_label.grid(row=0, column=4, padx=(10, 0), pady=10, sticky='e')
+
+alcohol_related_options = ["All", "Yes", "No"]
+alcohol_related_combobox = ttk.Combobox(
+    first_frame, values=alcohol_related_options, state="readonly")
+alcohol_related_combobox.set("All")
+alcohol_related_combobox.grid(
+    row=0, column=5, padx=(0, 10), pady=10, sticky='w')
+
+# Accident Type Label and Combobox
+accident_type_label = tk.Label(first_frame, text="Accident Type:")
+accident_type_label.grid(row=0, column=6, padx=(10, 0), pady=10, sticky='e')
+
+accident_type_options = ["All", "Collision with a fixed object", "collision with some other object", "Collision with vehicle", "Fall from or in moving vehicle",
+                         "No collision and no object struck", "Other accident", "Struck animal", "Struck Pedestrian", "Vehicle overturned (no collision)"]
+accident_type_combobox = ttk.Combobox(
+    first_frame, values=accident_type_options, state="readonly")
+accident_type_combobox.set("All")
+accident_type_combobox.grid(row=0, column=7, padx=(0, 10), pady=10, sticky='w')
+
+# Define the search button
+
 
 def search_by_date_and_type():
     start_date = start_date_entry.get()
     end_date = end_date_entry.get()
-    selected_types = [combobox.get() for combobox in accident_type_comboboxes if combobox.get() != "Select accident type"]
-    
+    alcohol_related = alcohol_related_combobox.get()
+    accident_type = accident_type_combobox.get()
+
     try:
         datetime.strptime(start_date, '%Y-%m-%d')
         datetime.strptime(end_date, '%Y-%m-%d')
         for widget in second_frame.winfo_children():
             widget.destroy()
-        plot_accidents_by_date_and_type(start_date, end_date, selected_types)
+        plot_accidents_by_date_and_type(
+            start_date, end_date, alcohol_related, accident_type)
     except ValueError:
-        messagebox.showerror("Error", "Please enter a valid date format (YYYY-MM-DD).")
+        messagebox.showerror(
+            "Invalid Date", "Please enter a valid date in YYYY-MM-DD format.")
 
-root = tk.Tk()
-root.title("Crash Statistics in Victoria")
-root.geometry("900x600")
 
-menu = tk.Menu(root)
-root.config(menu=menu)
+search_button = tk.Button(first_frame, text="Search",
+                          command=search_by_date_and_type)
+search_button.grid(row=1, column=8, padx=10, pady=10, sticky='e')
 
-file_menu = tk.Menu(menu)
-menu.add_cascade(label="File", menu=file_menu)
-file_menu.add_command(label="Load Data...", command=load_data)
-file_menu.add_separator()
-file_menu.add_command(label="Exit", command=root.quit)
+# Define the plot_accidents_by_date_and_type function
 
-main_frame = ttk.Frame(root)
-main_frame.pack(fill=tk.BOTH, expand=1)
 
-canvas = tk.Canvas(main_frame)
-canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=1)
+def plot_accidents_by_date_and_type(start_date, end_date, alcohol_related, accident_type):
+    filtered_data = data[(data['ACCIDENT_DATE'] >= start_date)
+                         & (data['ACCIDENT_DATE'] <= end_date)]
 
-scrollbar = ttk.Scrollbar(main_frame, orient=tk.VERTICAL, command=canvas.yview)
-scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+    if alcohol_related != "All":
+        filtered_data = filtered_data[filtered_data['ALCOHOL_RELATED']
+                                      == alcohol_related]
 
-canvas.configure(yscrollcommand=scrollbar.set)
-canvas.bind('<Configure>', lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+    if accident_type != "All":
+        filtered_data = filtered_data[filtered_data['ACCIDENT_TYPE']
+                                      == accident_type]
 
-second_frame = ttk.Frame(canvas)
-canvas.create_window((0, 0), window=second_frame, anchor="nw")
+    accidents_by_date = filtered_data.groupby(
+        'ACCIDENT_DATE').size().reset_index(name='Number_of_Accidents')
 
-search_panel = ttk.LabelFrame(second_frame, text="Search Panel", padding=(10, 5))
-search_panel.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
+    fig, ax = plt.subplots(figsize=(10, 4))
+    ax.plot(accidents_by_date['ACCIDENT_DATE'],
+            accidents_by_date['Number_of_Accidents'], marker='o')
+    ax.set(title='Number of Accidents by Date',
+           xlabel='Date', ylabel='Number of Accidents')
+    ax.grid(True)
 
-start_date_label = ttk.Label(search_panel, text="Start Date (YYYY-MM-DD):")
-start_date_label.grid(row=0, column=0, sticky="w", padx=5, pady=5)
-start_date_entry = ttk.Entry(search_panel)
-start_date_entry.grid(row=0, column=1, sticky="ew", padx=5, pady=5)
+    canvas = FigureCanvasTkAgg(fig, master=second_frame)
+    canvas_widget = canvas.get_tk_widget()
+    canvas_widget.grid(row=0, column=0, padx=10, pady=10)
+    canvas.draw()
 
-end_date_label = ttk.Label(search_panel, text="End Date (YYYY-MM-DD):")
-end_date_label.grid(row=1, column=0, sticky="w", padx=5, pady=5)
-end_date_entry = ttk.Entry(search_panel)
-end_date_entry.grid(row=1, column=1, sticky="ew", padx=5, pady=5)
 
-accident_type_comboboxes = []
-for i in range(3):  # Allowing up to 3 accident types to be selected
-    combobox = ttk.Combobox(search_panel, values=[], width=25)
-    combobox.set("Select accident type")
-    combobox.grid(row=i, column=2, sticky="ew", padx=5, pady=5)
-    accident_type_comboboxes.append(combobox)
-
-search_button = ttk.Button(search_panel, text="Search", command=search_by_date_and_type)
-search_button.grid(row=3, columnspan=3, pady=5)
-
+# Run the Tkinter event loop
 root.mainloop()

@@ -1,0 +1,231 @@
+commit c5fdac051761dcc3a4f417a4db81be93e68e7e43
+Author: anntapiador <anntapiador@gmail.com>
+Date:   Sun Sep 3 21:00:39 2023 +1000
+
+    3.1 Software Design (flow chart)
+
+commit aef8344af298ccbd50fd825d0ee9222db6f02aa7
+Author: anntapiador <anntapiador@gmail.com>
+Date:   Sun Sep 3 19:58:35 2023 +1000
+
+    3.2.3 Detailed Design
+
+commit 708fca0426401676aa92a32e8d75e08526f8ad9f
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Sun Sep 3 18:29:00 2023 +1000
+
+    update gantt chart
+
+commit fd129ba64849e0b9f0a3b71d2416b647dd8a5ec1
+Merge: 231d29f ba6e1b3
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Sun Sep 3 18:06:11 2023 +1000
+
+    Concluded merge and resolved conflicts
+
+commit 231d29fedb2b7612224f3e816d4c17f859670c6f
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Sun Sep 3 17:37:12 2023 +1000
+
+    change wireframe
+
+commit ba6e1b3ce8fb7e2edf2c72d7ff08ca35b8b576fa
+Author: anntapiador <anntapiador@gmail.com>
+Date:   Sun Sep 3 16:46:22 2023 +1000
+
+    Added inputs on 2.0 Requirements
+
+commit 075510da5f0b03881f979a3a76ee87647d09a3b4
+Author: anntapiador <anntapiador@gmail.com>
+Date:   Sun Sep 3 13:51:17 2023 +1000
+
+    Revised Project Plan (Intro and Document Content), System Design Document (System Vision), and fixed formatting
+
+commit acd065735471d248d39e5ba4bd4ff6b82d4651f6
+Author: anntapiador <anntapiador@gmail.com>
+Date:   Sun Sep 3 10:57:06 2023 +1000
+
+    Data Structures / Data Sources
+
+commit 9f10f69f659fc9802580fd58dc2097177b2091b4
+Author: Kaichunyu <kaichun.yu@griffithuni.edu.au>
+Date:   Sun Sep 3 01:38:20 2023 +1000
+
+    Added Use Case Diagram change wording from previous version
+
+commit e5a0fe1b9c13785f35e6236cf3838823bd6ad299
+Author: Kaichun Yu <kaichunyu@Kaichuns-MacBook-Air.local>
+Date:   Sat Sep 2 11:09:28 2023 +1000
+
+    Added 2.0 Requirements and 3.2.1 System component functions
+
+commit 2b9d6561736f9fb8e7a90a073f63cc33da0cab2c
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Fri Sep 1 18:32:17 2023 +1000
+
+    update desing doc
+
+commit 1482296facdabb5d713f3f9f9ae8c9e8b6fa907e
+Merge: ac0c2a0 5defa37
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Fri Sep 1 18:23:51 2023 +1000
+
+    update
+
+commit 5defa37f614cbdc2cffa2157960d869d4f362dae
+Author: anntapiador <anntapiador@gmail.com>
+Date:   Thu Aug 24 03:43:45 2023 +1000
+
+    Introduction (Background, Scope, Document Content)
+
+commit ac0c2a068533055330224619f004297c1231cf7b
+Merge: 55469d5 baf3780
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Mon Aug 21 17:04:49 2023 +1000
+
+    Merge branch 'main' of https://github.com/AugustineKdu/Software-TechICT-Group33
+
+commit baf3780bc7e62de0a64ad07d579c9f7639b6ed8a
+Author: anntapiador <anntapiador@gmail.com>
+Date:   Sun Aug 20 19:50:44 2023 +1000
+
+    Potential Benefits
+
+commit 5b02f5b8598982d46ba173750e3525a03546b964
+Author: anntapiador <anntapiador@gmail.com>
+Date:   Sun Aug 20 18:46:44 2023 +1000
+
+    Problem Background
+
+commit f9ab4f46c2a0b99fd603a3ba6aaf3b484d67fe7b
+Author: anntapiador <anntapiador@gmail.com>
+Date:   Sun Aug 20 15:43:04 2023 +1000
+
+    System Overview
+
+commit 55469d5799def05ebfbd7ff382aea293f0835a98
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Thu Aug 17 02:48:53 2023 +1000
+
+    update
+
+commit 46f605e64bb9b4aa0411a0e4a898258726b595c4
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Sun Aug 13 20:52:17 2023 +1000
+
+    add WBS
+
+commit e1916ab09004eddb9da974179f8d7eefa3745cb9
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Fri Aug 11 18:33:42 2023 +1000
+
+    example1.py
+
+commit 857b8dc4782a7ec44bdbf3d04ac31cc2f2eca9ef
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Fri Aug 11 17:15:58 2023 +1000
+
+    add excel file
+
+commit ab020888c6f97b9a9d384aaac822d91f246223c4
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Mon Aug 7 12:52:12 2023 +1000
+
+    update Gantt Chart
+
+commit 9ab2c76ab0f26cbf0d770e538a365bef3bdd656f
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Sun Aug 6 21:03:51 2023 +1000
+
+    add gantt chart
+
+commit 6069fb207f8399121e4e8443b6eb6fbfb7e4636d
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Sun Aug 6 20:56:23 2023 +1000
+
+    add Activity Def
+
+commit 34cf50f99f3f2e6894fa6e718ad570f3952b4ba1
+Merge: 6bcc713 3919255
+Author: Kaichun Yu <kaichunyu@south-10-20-66-38.wireless.griffith.edu.au>
+Date:   Thu Aug 3 15:02:06 2023 +1000
+
+    add the topic on project plan
+
+commit 39192554b1f9b2ba01d989978bf0f319e131a22b
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Thu Aug 3 14:49:47 2023 +1000
+
+    testing the py file
+
+commit 6bcc7137145e823d6ee1fe6820bc1a5e23d3da2b
+Author: Kaichun Yu <kaichunyu@south-10-20-66-38.wireless.griffith.edu.au>
+Date:   Thu Aug 3 14:41:30 2023 +1000
+
+    test123
+
+commit 7a4694683691ba71dfbc815c5785d30637685455
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Thu Aug 3 14:38:42 2023 +1000
+
+    test2
+
+commit e2abb441710626b6c61d012151104687da854308
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Thu Aug 3 14:36:41 2023 +1000
+
+    test2
+
+commit e817dfabc3bd071eabe21cf9c694afe38cd4e621
+Author: anntapiador <anntapiador@gmail.com>
+Date:   Thu Aug 3 14:29:32 2023 +1000
+
+    test
+
+commit 5497084912a232417fc46e50d92e4633938384d3
+Author: Kaichun Yu <kaichunyu@south-10-20-66-38.wireless.griffith.edu.au>
+Date:   Thu Aug 3 14:05:30 2023 +1000
+
+    add the project group numb
+
+commit 78fb73e217953c98d9be0e92b7421fc9c37cbb1c
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Fri Jul 28 23:45:04 2023 +1000
+
+    setting the git
+
+commit 949737a48a421b233dcfde7c6c0e28967cae24e3
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Fri Jul 28 23:37:18 2023 +1000
+
+    check file to set git
+
+commit c0b5dc960e8cd31bd3b9637c418a2a1cfad524e6
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Fri Jul 28 23:22:04 2023 +1000
+
+    change file name
+
+commit 40d1ddab85110c7a7223fc49068014a46e481443
+Author: Augustine <augustine.kim@griffithuni.edu.au>
+Date:   Fri Jul 28 23:15:21 2023 +1000
+
+    change file name
+
+commit 8972ebcf0064ceae6f6c6b7b5b8e8bc431b8db34
+Author: Augustine <110144480+AugustineKdu@users.noreply.github.com>
+Date:   Thu Jul 27 15:28:20 2023 +1000
+
+    4 file has been added
+
+commit aeb0234890724164ae048e5e5c1793151e546f1d
+Author: Augustine <110144480+AugustineKdu@users.noreply.github.com>
+Date:   Thu Jul 27 15:03:30 2023 +1000
+
+    Update README.md
+
+commit 512cb6a74188b25e916e57dd58a6f0874c0e4007
+Author: Augustine <110144480+AugustineKdu@users.noreply.github.com>
+Date:   Thu Jul 27 14:18:43 2023 +1000
+
+    Initial commit
