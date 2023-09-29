@@ -68,10 +68,12 @@ import numpy as np
 x = np.array(avg_accident)
 y = np.array(hour)
 
-plt.plot(y, x) 
+plt.figure(figsize=(16, 5))
+plt.plot(y, x, color="blue", linewidth=2.5, linestyle="-") 
 plt.title("Average Number of Accidents Per Hour") 
 plt.ylabel("Number of Accident") 
 plt.xlabel("Time (Hourly)") 
+plt.xticks(fontsize=7, rotation=5)
 plt.show()
 
 
