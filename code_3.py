@@ -4,8 +4,8 @@ from tkinter import ttk, messagebox
 from datetime import datetime
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from code_line_graph import get_avgAccident
-from region_graph import get_Axis_for_region_graph
+from first_graph import get_avgAccident
+from second_graph import get_data_for_second_graph
 
 
 conn = sqlite3.connect("Crash Statistics Victoria.db")
@@ -134,7 +134,7 @@ def display_line_graph(start_date, end_date):
     ax1.set_xticklabels(hour, fontsize=7, rotation=5)
     ax1.grid(False)
 
-    axis = get_Axis_for_region_graph(start_date, end_date)
+    axis = get_data_for_second_graph(start_date, end_date)
     # ax2.plot(axis[-1], axis[0], color="green", linewidth=2.5, linestyle="-")
     ax2.bar(axis[-1], axis[0], color="green", width=0.1)
     ax2.set(
