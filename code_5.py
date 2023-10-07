@@ -97,10 +97,10 @@ category_combobox.grid(row=1, column=7, padx=(0, 10), pady=10, sticky='w')
 
 
 # # Add a logo
-logo = PhotoImage(file="StateImage3.png")
-logo_label = tk.Label(user_manual_frame, image=logo)
-logo_label.pack(side='left', padx=1)
-
+logo = tk.PhotoImage(file="StateImage3.png")
+logo_label = tk.Label(user_manual_frame, image=logo,
+                      borderwidth=0, highlightthickness=0)
+logo_label.pack(side='left', padx=0)
 
 # Add project name
 project_name_label = tk.Label(
