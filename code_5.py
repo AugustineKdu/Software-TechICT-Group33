@@ -104,7 +104,7 @@ logo_label.pack(side='left', padx=0)
 
 # Add project name
 project_name_label = tk.Label(
-    user_manual_frame, text="Victory State Accident Analysis Project", font=('Arial', 44), bg='#65C5AE', fg='white')
+    user_manual_frame, text="Victoria State Accident Dashboard", font=('Arial', 44), bg='#65C5AE', fg='white')
 project_name_label.pack(side='left', padx=5)
 
 # User Manual in a Text Widget
