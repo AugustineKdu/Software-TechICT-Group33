@@ -30,6 +30,10 @@ conn.close()
 root = tk.Tk()
 root.title("Accident Analysis")
 
+# Set the window size, and minimum size
+root.geometry("800x600")
+root.minsize(800, 600)
+
 # user Manual frame
 user_manual_frame = tk.Frame(root, bg='#65C5AE')
 user_manual_frame.pack(fill='x')
