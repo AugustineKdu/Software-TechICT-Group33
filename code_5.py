@@ -31,7 +31,7 @@ root = tk.Tk()
 root.title("Accident Analysis")
 
 # Set the window size, and minimum size
-root.geometry("800x600")
+root.geometry("1600x1080")
 root.minsize(800, 600)
 
 # user Manual frame
@@ -219,7 +219,7 @@ def display_graph(start_date, end_date, alcohol_related, category):
     ax3.set_xticks(count)
     ax3.set_xticklabels(x, fontsize=7, rotation=90)
     ax3.grid(False)
-    ax3.legend(loc="center right", prop={'size': 5})
+    ax3.legend(loc="center right", bbox_to_anchor=(1.1, 1), prop={'size': 5})
 
     plt.tight_layout()
 
