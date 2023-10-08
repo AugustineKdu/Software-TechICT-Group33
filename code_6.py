@@ -69,7 +69,7 @@ tree = ttk.Treeview(table_frame, columns=("OBJECTID", "ACCIDENT_NO", "ACCIDENT_D
 
 # Define the graph search frame components
 title_label = tk.Label(
-    graph_search_frame, text="Search For Data Charts", font=("Arial", 18, "bold"), bg='#13093D', fg='white')
+    graph_search_frame, text="Search For Data Charts", font=("Sans-serif", 18, "bold"), bg='#13093D', fg='white')
 title_label.grid(row=0, column=4, columnspan=4, padx=10, pady=10, sticky='w')
 
 start_date_label = tk.Label(
@@ -87,7 +87,7 @@ end_date_entry = tk.Entry(graph_search_frame)
 end_date_entry.grid(row=1, column=3, padx=10, pady=10, sticky='w')
 
 date_range_label = tk.Label(
-    graph_search_frame, text=f"Selectable Date Range: {min_date} to {max_date}", font=('Arial', 12), bg='#13093D', fg='white')
+    graph_search_frame, text=f"Selectable Date Range: {min_date} to {max_date}", font=('Sans-serif', 12), bg='#13093D', fg='white')
 date_range_label.grid(row=0, column=0, columnspan=4, pady=10, sticky='s')
 
 alcohol_related_label = tk.Label(
@@ -117,22 +117,32 @@ logo_label.pack(side='left', padx=0)
 
 # Add project name
 project_name_label = tk.Label(
-    user_manual_frame, text="Victoria State Accident Dashboard", font=('Arial', 44), bg='#65C5AE', fg='white')
+    user_manual_frame, text="Victoria State Accident Dashboard", font=('Sans-serif', 44), bg='#65C5AE', fg='white')
 project_name_label.pack(side='left', padx=5)
 
 # User Manual in a Text Widget
-user_manual = Text(user_manual_frame, height=10,
-                   width=60, bg='#65C5AE', fg='white', font=('Arial', 14))
+user_manual = Text(user_manual_frame, height=12,
+                   width=60, bg='#65C5AE', fg='white', font=('Sans-serif', 14))
 user_manual.pack(padx=10, pady=10)
-user_manual.insert(tk.END, "User Manual\n\n")
+user_manual.insert(tk.END, "USER MANUAL\n\n")
 user_manual.insert(
-    tk.END, "1. Choose the desired start and end dates for accident analysis.\n")
+    tk.END, "TO DISPLAY GRAPHS:\n")
+user_manual.insert(
+    tk.END, "1. Choose the desired start and end dates.\n")
 user_manual.insert(
     tk.END, "2. Choose whether to filter results by alcohol-related accidents.\n")
 user_manual.insert(
-    tk.END, "3. Choose the type of accident for further filtering if needed.\n")
+    tk.END, "3. Choose the category for further filtering.\n")
 user_manual.insert(
     tk.END, "4. Click the 'Search' button to display the graph based on your selections.\n")
+user_manual.insert(
+    tk.END, "TO DISPLAY TABLE:\n")
+user_manual.insert(
+    tk.END, "1. Choose the desired start and end dates.\n")
+user_manual.insert(
+    tk.END, "2. Type keyword for further filtering if needed.\n")
+user_manual.insert(
+    tk.END, "3. Click the 'Search' button to display the table based on your selections.\n")
 user_manual.config(state=tk.DISABLED)  # Make the text read-only
 
 # Define the graph search button
@@ -240,7 +250,7 @@ def display_graph(start_date, end_date, alcohol_related, category):
 
 # Define the table search frame
 title_label = tk.Label(
-    table_search_frame, text="Search For Date Table", font=("Arial", 18, "bold"), bg='#13093D', fg='white')
+    table_search_frame, text="Search For Data Table", font=("Sans-serif", 18, "bold"), bg='#13093D', fg='white')
 title_label.grid(row=0, column=4, columnspan=4, padx=10, pady=10, sticky='w')
 
 table_start_date_label = tk.Label(
@@ -262,7 +272,7 @@ keyword_entry = tk.Entry(table_search_frame)
 keyword_entry.grid(row=1, column=5, padx=10, pady=10, sticky='w')
 
 date_range_label = tk.Label(
-    table_search_frame, text=f"Selectable Date Range: {min_date} to {max_date}", font=('Arial', 12), bg='#13093D', fg='white')
+    table_search_frame, text=f"Selectable Date Range: {min_date} to {max_date}", font=('Sans-serif', 12), bg='#13093D', fg='white')
 date_range_label.grid(row=0, column=0, columnspan=4, pady=(0, 10), sticky='s')
 
 # Define the table search button
