@@ -168,7 +168,7 @@ graph_search_button.grid(row=1, column=8, padx=10, pady=10, sticky='e')
 
 # Function to display graph
 def display_graph(start_date, end_date, alcohol_related, category):
-    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(14, 5))
+    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(17, 14))
     (y, x, count) = get_data_for_first_graph(start_date, end_date)
     ax1.plot(count, y, color="blue", linewidth=2.5, linestyle="-")
     ax1.set(title=f'Average Number of Accidents Per Hour from {start_date} to {end_date}',
@@ -238,7 +238,7 @@ def display_graph(start_date, end_date, alcohol_related, category):
     ax3.set_xticks(count)
     ax3.set_xticklabels(x, fontsize=7, rotation=90)
     ax3.grid(False)
-    ax3.legend(loc="center right", bbox_to_anchor=(1.1, 1), prop={'size': 5})
+    ax3.legend(loc="center right", bbox_to_anchor=(1.1, 1), prop={'size': 8})
 
     plt.tight_layout()
 
@@ -266,7 +266,7 @@ table_end_date_entry = tk.Entry(table_search_frame)
 table_end_date_entry.grid(row=1, column=3, padx=10, pady=10, sticky='w')
 
 keyword_label = tk.Label(
-    table_search_frame, text="Type a keyword for accident type:", bg='#13093D', fg='white')
+    table_search_frame, text="Type Keyword:", bg='#13093D', fg='white')
 keyword_label.grid(row=1, column=4, padx=(10, 0), pady=10, sticky='e')
 keyword_entry = tk.Entry(table_search_frame)
 keyword_entry.grid(row=1, column=5, padx=10, pady=10, sticky='w')
